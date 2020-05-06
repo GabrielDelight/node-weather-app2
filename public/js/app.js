@@ -1,4 +1,3 @@
-console.log('App started')
 let weatherInput = document.querySelector('form');
 let search = document.querySelector('input')
 let message1 = document.getElementById('message-1');
@@ -12,7 +11,7 @@ weatherInput.addEventListener('submit', (e)=>{
     message1.textContent = 'Loading...'
     message2.textContent = ''
 
-    fetch(`http://localhost:3000/weather?address=${address}`).then((response) => {
+    fetch(`/weather?address=${address}`).then((response) => {
         response.json().then((data) => {
             if(data.error){
                 console.log(data.error)

@@ -9,6 +9,7 @@ const request = require('request');
 
 // Seting up express application
 const app = express();
+let port = process.env.PORT || 3000
 
 // Set up a statci  path 
 const viewPath = path.join(__dirname, '../templates/views');
@@ -117,6 +118,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3000, ()=> {
-    console.log('Server suns on port 3000')
+app.listen(port, ()=> {
+    console.log('Server suns on port ' + port)
 })
