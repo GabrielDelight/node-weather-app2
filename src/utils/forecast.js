@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) =>{
     }else if(body.error){
       callback('Can not get ur search term please try another search', undefined);
     }else {
-      callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature + ' degrees out,  and ' + body.currently.precipProbability + '% chanse of rain' )
+      callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature + ' degrees out,  and ' + ' Weather temperature  high says ' + body.daily.data[0].temperatureHigh + ' and temperature  high says ' + body.daily.data[0].temperatureLow + '. '+ body.currently.precipProbability + '% chance of rain and'  )      
     }
   })
 
